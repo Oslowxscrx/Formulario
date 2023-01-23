@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="../static/css/index.css">
+<br>
+<center>
+    <h1 style="color: #d49e09;
+    font-weight: normal;
+    font-size: 40px;
+    font-family: Arial;
+    text-transform: uppercase;">Formularios</h1>
+</center>
+
+<center>
+    <FORM method="POST" action="/store" enctype="multipart/form-data">
+
+        
+        <CENTER>
+            <TABLE class="table table-info" BORDER>    
+                <thead class="table-dark">
+                <center>
+                
+            </thead> 
+                    <TR>
+                        <TD class="negro table-dark">Cedula:</TD>
+                        <TD class="negro table-secondary"> <INPUT TYPE="number" MIN="1000000000" MAX="10000000000"  class="form-control" name="txtCedula" id="txtCedula" required placeholder="escriba su Cedula" SIZE=18
+                                MAXLENGTH=18 >
+                        </TD>
+                    <TR>
+
+                    <TR>
+                        <TD class=" tf w-input negro table-dark">Nombre:</TD>
+                        <TD class="negro table-secondary"> <INPUT TYPE="text" class="form-control"  name="txtNombre" id="txtNombre" minlength="3" maxlength="59" required placeholder="Escriba sus Nombres" SIZE=18
+                                MAXLENGTH=18 >
+                        </TD>
+                    <TR>
+                    <TR>
+                        <TD class="tf w-input negro table-dark">Apellidos:</TD>
+                        <TD class="negro table-secondary"> <INPUT TYPE="text" class="form-control" name="txtApellido" id="txtApellido" minlength="3" maxlength="59" required placeholder="Escriba sus Apellidos" SIZE=48
+                                MAXLENGTH=48 ></TD>
+                    <TR>
+                    <TR>
+                        <TD class="negro table-dark">Edad:</TD>
+                        <TD class="negro table-secondary"> <INPUT  TYPE="number" MIN="1" MAX="120" class="form-control" name="txtEdad" id="txtEdad" required placeholder="Escriba su Edad"  SIZE=48 MAXLENGTH=48>
+                        </TD>
+                    <TR>
+                    
+                            
+                            
+                    <TR>
+                        <TD class="negro table-dark"><B>Pulse aquí:</B></TD>
+                        <TD class="negro table-secondary" ALIGN=CENTER>
+                            <INPUT TYPE="submit" class="btn btn-success" VALUE="Agregar ">
+                            <INPUT TYPE="reset" class="btn btn-warning" VALUE="Borrar los datos">
+                        </TD>
+                    </TR>
+                    </center>
+                    
+            </TABLE>
+        </CENTER>
+    </FORM>
+</center>
+
+{% endblock %}

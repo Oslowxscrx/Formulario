@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="../static/css/edit.css">
+<br>
+<center><h1 style="color: #d49e09;
+    font-weight: normal;
+    font-size: 40px;
+    font-family: Arial;
+    text-transform: uppercase;">Editar Datos</h1></center>
+
+{% for formulario in formulario %}
+  
+        <center>
+            <FORM method="POST" action="/update" enctype="multipart/form-data">  
+                <CENTER>
+                    <TABLE class="table table-info" BORDER>    
+                        <thead class="table-dark">
+                        <center>
+                        
+                    </thead> 
+                            <TR>
+                                <TD class="negro table-dark" >Cedula:</TD>
+                                <TD class="negro table-secondary"> <INPUT TYPE="number" MIN="1000000000" MAX="10000000000"  value="{{formulario[0]}}" required class="form-control"   name="txtCedula" id="txtCedula" readonly=»readonly» placeholder="Escriba su Cedula" SIZE=18
+                                        MAXLENGTH=18 >
+                                </TD>
+                            <TR>
+                            <TR>
+                                <TD class="negro table-dark">Nombre:</TD>
+                                <TD class="negro table-secondary"> <INPUT TYPE="text" class="form-control" value="{{formulario[1]}}" required name="txtNombre" id="txtNombre" placeholder="Escriba sus Nombres" SIZE=18
+                                        MAXLENGTH=18>
+                                </TD>
+                            <TR>
+                            <TR>
+                                <TD class="negro table-dark">Apellidos:</TD>
+                                <TD class="negro table-secondary"> <INPUT TYPE="text" class="form-control" value="{{formulario[2]}}" required name="txtApellido" id="txtApellido" placeholder="Escriba sus Apellidos" SIZE=48
+                                        MAXLENGTH=48 ></TD>
+                            <TR>
+                            <TR>
+                                <TD class="negro table-dark">Edad:</TD>
+                                <TD class="negro table-secondary"> <INPUT TYPE="number" MIN="1" MAX="120" class="form-control" value="{{formulario[3]}}" required name="txtEdad" id="txtEdad" placeholder="Escriba su Edad" SIZE=48 MAXLENGTH=48 >
+                                </TD>
+                            <TR>
+                            
+                            <TR>
+                                <TD class="negro table-dark"><B>Pulse aquí:</B></TD>
+                                <TD class="negro table-secondary" ALIGN=CENTER>
+                                    <INPUT TYPE="submit" class="btn btn-success" VALUE="Actualizar">
+                                    <INPUT TYPE="reset" class="btn btn-warning" VALUE="Borrar datos de los campos">
+                                    <a class="btn btn-danger" href="/destroy/{{formulario[0]}}">Eliminar</a>
+                                </TD>
+                            </TR>
+                            </center>
+                    </TABLE>
+                </CENTER>
+            </FORM>
+        </center>
+{%endfor%}
+
+
+
+{% endblock %}
